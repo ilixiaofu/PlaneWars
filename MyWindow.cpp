@@ -103,8 +103,8 @@ void MyWindow::OnCreate()
 	gthread1 = new Thread([=]() {
 		while (true)
 		{
-			gBackgroundA->scrollBackground(this->height, 0 - this->height);
-			gBackgroundB->scrollBackground(this->height, 0 - this->height);
+			gBackgroundA->scrollBackground(gBackgroundA->height, 0 - this->height);
+			gBackgroundB->scrollBackground(gBackgroundB->height, 0 - this->height);
 			gmonster->move(this->width - gmonster->width, 2);
 			Sleep(15);
 		}
@@ -204,9 +204,12 @@ void MyWindow::OnPaint(HDC hdc, PAINTSTRUCT ps)
 
 	DrawHBitmapOnMDC(mdc, bufdc, gplayer->cx, gplayer->cy, gplayer->width, gplayer->height, gplayer->hbmp_b, SRCAND);
 	DrawHBitmapOnMDC(mdc, bufdc, gplayer->cx, gplayer->cy, gplayer->width, gplayer->height, gplayer->hbmp_f, SRCPAINT);
-
+	gcs1->lock();
 	DrawBullet(mdc, bufdc, gmonster->bullets);
+	gcs1->unlock();
+	gcs2->lock();
 	DrawBullet(mdc, bufdc, gplayer->bullets);
+	gcs2->unlock();
 
 	BitBlt(hdc, 0, 0, w, h, mdc, 0, 0, SRCCOPY);
 

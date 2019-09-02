@@ -188,16 +188,11 @@
     <Image Include="res\images\BossBullet.bmp" />
     <Image Include="res\images\BOSS_B.bmp" />
     <Image Include="res\images\BOSS_F.bmp" />
+    <Image Include="res\images\icon1.ico" />
     <Image Include="res\images\myPlane_b.bmp" />
     <Image Include="res\images\myPlane_f.bmp" />
     <Image Include="res\images\PlayerBullet.bmp" />
     <Image Include="small.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="res\images\music1.bin" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="res\music\BGM.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

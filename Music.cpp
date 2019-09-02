@@ -13,7 +13,7 @@ Music::~Music()
 
 void Music::player()
 {
-	PlaySoundW(MAKEINTRESOURCE(IDR_WAVE1), NULL, SND_ASYNC | SND_LOOP);
+	//PlaySoundW(MAKEINTRESOURCE(IDR_WAVE1), NULL, SND_ASYNC | SND_LOOP);
 	//mciSendString("open resources\\Music\\BGM.wav alias music", NULL, 0, NULL);
 	//mciSendString("play music repeat", 0, 0, 0);
 }

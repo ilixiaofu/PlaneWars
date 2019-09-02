@@ -19,7 +19,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	// 初始化全局字符串
 	LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
 	LoadStringW(hInstance, IDC_PLANEWARS, szWindowClass, MAX_LOADSTRING);
-	HICON hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDC_PLANEWARS));
+	HICON hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_PLANEWARS));
 	HICON hIconSm = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_SMALL));
 	myWindow.InitWindowInstance(szWindowClass, szTitle, hIcon, hIconSm);
 	return myWindow.exec();
