@@ -103,8 +103,8 @@ void MyWindow::OnCreate()
 	gthread1 = new Thread([=]() {
 		while (true)
 		{
-			gBackgroundA->scrollBackground(gBackgroundA->height, 0 - this->height);
-			gBackgroundB->scrollBackground(gBackgroundB->height, 0 - this->height);
+			gBackgroundA->scrollBackground(this->height, 0 - gBackgroundA->height + gBackgroundB->cy);
+			gBackgroundB->scrollBackground(this->height, 0 - gBackgroundB->height + gBackgroundA->cy);
 			gmonster->move(this->width - gmonster->width, 2);
 			Sleep(15);
 		}
